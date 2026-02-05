@@ -107,7 +107,7 @@ function Profile({searchTerms, filter}) {
         formData.append('username', username);
 
         try {
-            const response = await fetch('http://localhost:5000/api/pfp', {
+            const response = await fetch('/api/pfp', {
                 method: 'POST',
                 body: formData
             });

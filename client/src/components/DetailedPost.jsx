@@ -36,7 +36,7 @@ function DetailedPost() {
             const fetchPost = async () => {
                 console.log(`Fetching post with ID: ${_id} for user: ${username}`); // Debugging info
                 try {
-                    const response = await fetch(`http://localhost:5000/api/blogposts/${_id}?userId=${username}`);
+                    const response = await fetch(`/api/blogposts/${_id}?userId=${username}`);
                     if (response.ok) {
                         const data = await response.json();
                         setPost(data);
@@ -64,7 +64,7 @@ function DetailedPost() {
 
     const handleLike = async (e) => {
         e.stopPropagation();
-        const url = `http://localhost:5000/api/blogposts/${_id}/like`;
+        const url = `/api/blogposts/${_id}/like`;
         console.log('Toggling like for post at:', url);
 
         try {
@@ -103,7 +103,7 @@ function DetailedPost() {
     const handleCommentSubmit = async () => {
         if (newComment.trim() !== "" && username.trim() !== "") {
             try {
-                const response = await fetch(`http://localhost:5000/api/blogposts/${_id}/comments`, {
+                const response = await fetch(`/api/blogposts/${_id}/comments`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ function DetailedPost() {
 
     const handleDelete = async () => {
         handleMenuClose();
-        const url = `http://localhost:5000/api/blogposts/${_id}`;
+        const url = `/api/blogposts/${_id}`;
         try {
             const response = await fetch(url, {
                 method: 'DELETE',

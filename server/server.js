@@ -1,19 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const multer = require('multer');
 const fs = require('fs');
 const path = require("path");
 const sharp = require('sharp');
 const cors = require('cors');
-const User = require('./user.js');
-const Blogpost = require('./blogpost.js');
+const User = require('./models/user');
+const Blogpost = require('./models/blogpost');
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const storage = multer.memoryStorage();
 
@@ -81,9 +80,9 @@ app.post('/api/pfp', upload.single('image'), async (req, res, next) => {
 });
 */
 
-mongoose.connect('mongodb://localhost:27017/bloghogDB', {
-        useNewUrlParser: true
-});
+mongoose.connect('mongodb://127.0.0.1:27017/bloghogDB')
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error', err));
 
 // Function checks if username passed through Blogpost model exists in User model
 const checkUserExists = async (username) => {
