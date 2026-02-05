@@ -25,7 +25,7 @@ function EditPost() {
             const fetchPost = async () => {
                 console.log(`Fetching post with ID: ${_id} for user: ${username}`);
                 try {
-                    const response = await fetch(`http://localhost:5000/api/blogposts/${_id}`);
+                    const response = await fetch(`/api/blogposts/${_id}`);
                     if (response.ok) {
                         const data = await response.json();
                         setPost(data);
@@ -60,7 +60,7 @@ function EditPost() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = `http://localhost:5000/api/blogposts/${_id}`;
+        const url = `/api/blogposts/${_id}`;
         console.log('Updating post at:', url);
 
         try {

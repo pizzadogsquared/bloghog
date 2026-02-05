@@ -10,7 +10,7 @@ function Home({searchTerms, filter}) {
 
         const fetchPosts = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/blogposts');
+                const response = await fetch('/api/blogposts');
                 if (response.ok) {
                     const data = await response.json();
 

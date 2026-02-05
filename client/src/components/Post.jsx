@@ -27,7 +27,7 @@ function Post({ _id, author, time, title, reactions, comments = [] }) {
         const fetchLikeStatus = async () => {
             if (_id && username) {
                 try {
-                    const response = await fetch(`http://localhost:5000/api/blogposts/${_id}?userId=${username}`);
+                    const response = await fetch(`/api/blogposts/${_id}?userId=${username}`);
                     if (response.ok) {
                         const data = await response.json();
                         setUserLiked(data.userLiked);
@@ -49,7 +49,7 @@ function Post({ _id, author, time, title, reactions, comments = [] }) {
 
     const handleLike = async (e) => {
         e.stopPropagation();
-        const url = `http://localhost:5000/api/blogposts/${_id}/like`;
+        const url = `/api/blogposts/${_id}/like`;
         console.log('Toggling like for post at:', url);
 
         try {
@@ -101,7 +101,7 @@ function Post({ _id, author, time, title, reactions, comments = [] }) {
 
     const handleDelete = async () => {
         handleMenuClose();
-        const url = `http://localhost:5000/api/blogposts/${_id}`;
+        const url = `/api/blogposts/${_id}`;
         try {
             const response = await fetch(url, {
                 method: 'DELETE',
