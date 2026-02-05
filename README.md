@@ -8,6 +8,14 @@ BlogHog is a web-based blog platform that allows users to create, edit, and post
 - **Image Integration**: Include pictures in your posts to make them more engaging.
 - **Interest Categories**: Organize and browse posts by specific interests, authors, tags, etc.
 
+## Images
+
+![alt text](https://github.com/pizzadogsquared/bloghog/blob/main/readmesrc/bloghog2.png "Register Account Display")
+![alt text](https://github.com/pizzadogsquared/bloghog/blob/main/readmesrc/bloghog3.png "Create Post Display")
+![alt text](https://github.com/pizzadogsquared/bloghog/blob/main/readmesrc/bloghog4.png "Post Display")
+![alt text](https://github.com/pizzadogsquared/bloghog/blob/main/readmesrc/bloghog5.png "Home Display")
+![alt text](https://github.com/pizzadogsquared/bloghog/blob/main/readmesrc/bloghog6.png "Filter Display")
+
 ## Project Information
 
 This project was developed for the CS312 course at Northern Arizona University.
